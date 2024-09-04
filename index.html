@@ -404,78 +404,72 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
     <!-- Conclusion. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Conclusion</h2>
-
-        <!-- Conclusion. -->
-        <h3 class="title is-4">Discussion</h3>
         <div class="content has-text-justified">
           <p>
-            ...
+            We introduced SWAG, a novel approach for intraoperative surgical workflow anticipation that combines phase recognition and anticipation tasks. Our main contributions include:
           </p>
-        </div>
-        <!-- <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div> -->
-          <!-- <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div> -->
-          <!-- <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div> -->
-        <!-- </div> -->
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Limitations</h3>
-        <div class="content has-text-justified">
+          <ol>
+            <li>A two-stage single-pass and auto-regressive generative model for joint surgical workflow recognition and anticipation.</li>
+            <li>A comparative study between remaining time regression and timestamp classification on Cholec80 and AutoLaparo21 datasets.</li>
+            <li>A new token initialization approach using class conditional probabilities as prior knowledge.</li>
+          </ol>
           <p>
-            1. Clinical validation in the operating room.
-            2. Generalisation to more than two datasets.
+            SWAG consistently outperforms previous approaches and naive baselines, demonstrating its potential for providing real-time, long-term guidance in the operating room.
           </p>
         </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
 
-
-    <!-- Concurrent Work. -->
+    <!-- Related Works. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Related Work</h2>
-
+        <h2 class="title is-3">Related Works</h2>
         <div class="content has-text-justified">
-          <p>
-            LoViT / SKiT / SuPRA
-          </p>
-          <p>
-            <a href="">...</a> link
-          </p>
+          <p>Our work builds upon recent advancements in surgical phase recognition and anticipation:</p>
+          <ul>
+            <li><strong>LoViT:</strong> Utilized Vision Transformers for efficient spatiotemporal feature extraction.</li>
+            <li><strong>SKiT:</strong> Introduced an efficient long-term compression approach for online surgical phase recognition.</li>
+            <li><strong>Previous anticipation methods:</strong> Focused on predicting remaining time until next phase occurrence or short-term anticipation.</li>
+          </ul>
+          <p>SWAG extends these approaches by introducing a generative model capable of long-term, multi-step surgical workflow anticipation.</p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
 
+    <!-- Limitations. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Limitations</h2>
+        <div class="content has-text-justified">
+          <ol>
+            <li>Clinical validation: The model has not yet been tested in real operating room settings.</li>
+            <li>Dataset diversity: Current evaluation is limited to two datasets (Cholec80 and AutoLaparo21).</li>
+            <li>Complexity of surgical procedures: The model may struggle with highly variable or complex surgeries not represented in the training data.</li>
+            <li>Reliance on video input: The current approach doesn't incorporate other potentially valuable data sources such as instrument usage or vital signs.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Works. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Future Works</h2>
+        <div class="content has-text-justified">
+          <ol>
+            <li>Explore the application of SWAG to more complex sequential patterns in surgical videos, such as steps, actions, and gestures.</li>
+            <li>Investigate the integration of Large Language Models (LLMs) for enhanced planning assistance and more detailed textual descriptions of anticipated workflows.</li>
+            <li>Expand the model's capabilities to handle multi-modal inputs, incorporating additional data sources beyond video.</li>
+            <li>Conduct clinical trials to validate the model's performance and usefulness in real-world surgical settings.</li>
+            <li>Develop methods to compare the model's anticipation capabilities with human expert performance.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
