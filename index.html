@@ -6,7 +6,7 @@
         content="SWAG: Surgical Workflow Anticipation with Generative Modelling.">
   <meta name="keywords" content="Surgical AI, Computer Vision, Future Prediction">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SWAG: Surgical Workflow Anticipation with Generative Modelling</title>
+  <title>SWAG: Long-term Surgical Workflow Prediction with Generative-based Anticipation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -82,7 +82,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SWAG: Surgical Workflow Anticipation with Generative Modelling</h1>
+          <h1 class="title is-1 publication-title">SWAG: Long-term Surgical Workflow Prediction with Generative-based Anticipation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://maxboels.github.io/">Maxence Boels</a>,</span>
@@ -323,32 +323,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Intra-operative recognition of surgical phases holds significant potential for
-            enhancing real-time contextual awareness in the operating room. However, we
-            argue that online recognition, while beneficial, primarily lends itself to postoperative video analysis due to its limited direct impact on the actual surgical
-            decisions and actions during ongoing procedures. In contrast, we contend that
-            the prediction and anticipation of surgical phases are inherently more valuable
-            for intra-operative assistance, as they can meaningfully influence a surgeon’s
-            immediate and long-term planning by providing foresight into future steps. 
-          </p>
-          <p>
-            To address this gap, we propose a dual approach that simultaneously recognises the
-            current surgical phase and predicts upcoming ones, thus offering comprehensive
-            intra-operative assistance and guidance on the expected remaining workflow. Our
-            novel method, Surgical Phase Recognition and Anticipation (SuPRA), leverages
-            past and current information for accurate intra-operative phase recognition while
-            using future segments for phase prediction. This unified approach challenges conventional frameworks that treat these objectives separately. We have validated
-            SuPRA on two reputed datasets, Cholec80 and AutoLaparo21, where it demonstrated state-of-the-art performance with recognition accuracies of 91.8% and
-            79.3%, respectively.
-          </p>
-          <p>
-            Additionally, we introduce and evaluate our model using new
-            segment-level evaluation metrics, namely Edit and F1 Overlap scores, for a more
-            temporal assessment of segment classification. In conclusion, SuPRA presents
-            a new multi-task approach that paves the way for improved intra-operative
-            assistance through surgical phase recognition and prediction of future events.
-          </p>
+            <p>
+              Anticipating surgical phases in real-time is crucial for enhancing operating room efficiency and patient safety by providing foresight into future procedural steps. We present SWAG (Surgical Workflow Anticipative Generator), a model that unifies phase recognition and long-term anticipation within a single framework.
+            </p>
+            <p>
+              <strong>Methods:</strong> SWAG employs two decoding methods—single-pass (SP) and auto-regressive (AR)—for sequential phase prediction and introduces a prior knowledge embedding mechanism to initialise future tokens. Within this framework, we address two predictive tasks: future phase classification and remaining time regression, along with a regression-to-classification (R2C) approach to map continuous predictions to discrete future segments.
+            </p>
+
+            <p>
+              <strong>Results:</strong> Comprehensive evaluations on the Cholec80 and AutoLaparo21 datasets highlight SWAG’s effectiveness. The single-pass classification model with prior knowledge embeddings (SWAG-SP*) achieves 53.5% accuracy in 15-minute anticipation on AutoLaparo21, while the R2C model reaches 60.8% on Cholec80. Additionally, SWAG’s single-pass regression approach outperforms existing methods on the remaining time prediction benchmark, achieving weighted mean absolute errors of 0.32 and 0.48 minutes for 2- and 3-minute horizons, respectively. These results demonstrate SWAG’s versatility across classification and regression tasks, offering robust tools for real-time surgical workflow anticipation to support safer and more efficient procedures.
+            </p>
         </div>
       </div>
     </div>
@@ -393,7 +377,7 @@
           <p>
             Comment results
           </p>
-          <img src="./static/images/all_metrics_accuracy.png" alt="Accuracy Results">
+          <img src="./static/images/accuracy_future_t.png" alt="Accuracy Results">
         </div>
       </div>
     </div>
