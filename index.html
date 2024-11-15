@@ -82,7 +82,16 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SWAG: Long-term Surgical Workflow Prediction with Generative-based Anticipation</h1>
+          <div class="columns is-vcentered">
+            <div class="column is-narrow">
+              <img src="./static/images/turquoise-cute-octopus-with-surgical-mask-with-crystal-ball.png" alt="SWAG Logo" class="title-image small-title-image">
+            </div>
+            <div class="column">
+              <h1 class="title is-1 publication-title gradient-title">
+                SWAG: Long-term Surgical Workflow Prediction with Generative-based Anticipation
+              </h1>
+            </div>
+          </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://maxboels.github.io/">Maxence Boels</a>,</span>
@@ -180,7 +189,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Surgical AI Assistant</h2>
         <div class="content">
-          <iframe src="https://master--surgical-workflow-anticipation-app.netlify.app/" width="100%" height="600" frameborder="0" allowfullscreen>
+          <iframe src="https://master--surgical-workflow-anticipation-app.netlify.app/" width="100%" height="6  00" frameborder="0" allowfullscreen>
           </iframe>
         </div>
       </div>
@@ -324,32 +333,33 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
             <p>
-              Anticipating surgical phases in real-time is crucial for enhancing operating room efficiency and patient safety by providing foresight into future procedural steps. We present SWAG (Surgical Workflow Anticipative Generator), a model that unifies phase recognition and long-term anticipation within a single framework.
+              <strong>Purpose</strong>
             </p>
             <p>
-              <strong>Methods:</strong> SWAG employs two decoding methods—single-pass (SP) and auto-regressive (AR)—for sequential phase prediction and introduces a prior knowledge embedding mechanism to initialise future tokens. Within this framework, we address two predictive tasks: future phase classification and remaining time regression, along with a regression-to-classification (R2C) approach to map continuous predictions to discrete future segments.
+                Real-time surgical phase anticipation is crucial for improving operating room efficiency and patient safety</strong>. While existing recognition approaches excel at identifying current surgical phases, they provide <strong>limited foresight into future procedural steps</strong>, restricting their intraoperative utility. Similarly, current anticipation methods are constrained to predicting <strong>short-term events or singular occurrences</strong>, neglecting the dynamic and sequential nature of surgical workflows. To address these limitations, we propose SWAG (Surgical Workflow Anticipative Generator), a unified framework for phase recognition and long-term anticipation of surgical workflows.
             </p>
-
             <p>
-              <strong>Results:</strong> Comprehensive evaluations on the Cholec80 and AutoLaparo21 datasets highlight SWAG’s effectiveness. The single-pass classification model with prior knowledge embeddings (SWAG-SP*) achieves 53.5% accuracy in 15-minute anticipation on AutoLaparo21, while the R2C model reaches 60.8% on Cholec80. Additionally, SWAG’s single-pass regression approach outperforms existing methods on the remaining time prediction benchmark, achieving weighted mean absolute errors of 0.32 and 0.48 minutes for 2- and 3-minute horizons, respectively. These results demonstrate SWAG’s versatility across classification and regression tasks, offering robust tools for real-time surgical workflow anticipation to support safer and more efficient procedures.
+              <strong>Methods</strong>
+            </p>
+            <p>
+                <strong>SWAG employs two generative decoding methods—single-pass (SP) and auto-regressive (AR)—to predict sequences of future surgical phases.</strong> A novel <strong>prior knowledge embedding mechanism</strong> enhances the accuracy of anticipatory predictions by integrating statistical priors into token initialisation. The framework addresses <strong>future phase classification and remaining time regression tasks.</strong> Additionally, a <strong>regression-to-classification (R2C) method</strong> is introduced to map continuous predictions to discrete temporal segments. <strong>SWAG's performance was evaluated on the Cholec80 and AutoLaparo21 datasets.</strong>
+            </p>
+            <p>
+              <strong>Results</strong>
+            </p>
+            <p>
+              The single-pass classification model with prior knowledge embeddings (SWAG-SP*) achieved <strong>53.5% accuracy in 15-minute anticipation</strong> on AutoLaparo21, while the R2C model reached <strong>60.8% accuracy</strong> on Cholec80. SWAG's single-pass regression approach outperformed existing methods for remaining time prediction, achieving weighted mean absolute errors of <strong>0.32</strong> and <strong>0.48 minutes</strong> for 2- and 3-minute horizons, respectively.
+            </p>
+            <p>
+              <strong>Conclusion</strong>
+            </p>
+            <p>
+              SWAG demonstrates <strong>versatility across classification and regression tasks</strong>, offering <strong>robust tools for real-time surgical workflow anticipation</strong>. By <strong>unifying recognition and anticipatory capabilities</strong>, SWAG provides <strong>actionable predictions</strong> to enhance intraoperative decision-making. The project webpage is available at https://maxboels.github.io/swag.
             </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Surgical Video Example or Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src=""
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
-  </div>
 </section>
 
 <!-- Methods and Results in a single column -->
@@ -360,10 +370,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Methods</h2>
         <div class="content">
-          <p>
-            Comment on the model architecture
-          </p>
           <img src="./static/images/model_architecture_with_probs.png" alt="Model Architecture">
+          <p>
+            Our proposed model, illustrated in Figure 2, comprises a vision encoder, a temporal aggregation module based on self-attention, compression and pooling mechanisms, and a future prediction module that can operate with either a single-pass (SP) or an auto-regressive (AR) decoder. While our model uses classification for the recognition task, it can use either classification or regression for anticipation. This architecture also includes a novel token embedding initialization strategy based on the recognised class and the temporal position of the decoded target token.
+          </p>
         </div>
       </div>
     </div>
@@ -374,10 +384,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
         <div class="content">
-          <p>
-            Comment results
-          </p>
           <img src="./static/images/accuracy_future_t.png" alt="Accuracy Results">
+          <p>
+            Model performance (accuracy) of surgical phase recognition and anticipation on Cholec80 and AutoLaparo21 up to 18 minutes, with mean values over 18 minutes.
+          </p>
         </div>
       </div>
     </div>
@@ -394,47 +404,17 @@
         <h2 class="title is-3">Conclusion</h2>
         <div class="content has-text-justified">
           <p>
-            We introduced SWAG, a novel approach for intraoperative surgical workflow anticipation that combines phase recognition and anticipation tasks. Our main contributions include:
+            We introduced <strong>SWAG</strong>, a pioneering framework that unifies <strong>surgical phase recognition and long-term anticipation</strong> through generative modeling. Our framework demonstrates:
           </p>
-          <ol>
-            <li>A two-stage single-pass and auto-regressive generative model for joint surgical workflow recognition and anticipation.</li>
-            <li>A comparative study between remaining time regression and timestamp classification on Cholec80 and AutoLaparo21 datasets.</li>
-            <li>A new token initialization approach using class conditional probabilities as prior knowledge.</li>
-          </ol>
-          <p>
-            SWAG consistently outperforms previous approaches and naive baselines, demonstrating its potential for providing real-time, long-term guidance in the operating room.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Related Works. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Works</h2>
-        <div class="content has-text-justified">
-          <p>Our work builds upon recent advancements in surgical phase recognition and anticipation:</p>
           <ul>
-            <li><strong>LoViT:</strong> Utilized Vision Transformers for efficient spatiotemporal feature extraction.</li>
-            <li><strong>SKiT:</strong> Introduced an efficient long-term compression approach for online surgical phase recognition.</li>
-            <li><strong>Previous anticipation methods:</strong> Focused on predicting remaining time until next phase occurrence or short-term anticipation.</li>
+            <li><strong>Superior performance</strong> over naive baselines in classification tasks</li>
+            <li><strong>Competitive results</strong> in regression tasks, particularly for remaining surgery duration predictions</li>
+            <li><strong>Successful integration</strong> of prior knowledge in future-generated tokens</li>
+            <li><strong>Real-world applicability</strong> through implementation in a practical software application</li>
           </ul>
-          <p>SWAG extends these approaches by introducing a generative model capable of long-term, multi-step surgical workflow anticipation.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Limitations. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Limitations</h2>
-        <div class="content has-text-justified">
-          <ol>
-            <li>Clinical validation: The model has not yet been tested in real operating room settings.</li>
-            <li>Dataset diversity: Current evaluation is limited to two datasets (Cholec80 and AutoLaparo21).</li>
-            <li>Complexity of surgical procedures: The model may struggle with highly variable or complex surgeries not represented in the training data.</li>
-            <li>Reliance on video input: The current approach doesn't incorporate other potentially valuable data sources such as instrument usage or vital signs.</li>
-          </ol>
+          <p>
+            Clinically, SWAG's <strong>real-time phase anticipation capabilities</strong> offer valuable support for <strong>intraoperative decision-making</strong>, with potential to enhance both <strong>patient safety and procedural efficiency</strong>. Our evaluation on Cholec80 and AutoLaparo21 datasets validates SWAG as a robust solution for surgical workflow anticipation.
+          </p>
         </div>
       </div>
     </div>
@@ -445,11 +425,11 @@
         <h2 class="title is-3">Future Works</h2>
         <div class="content has-text-justified">
           <ol>
-            <li>Explore the application of SWAG to more complex sequential patterns in surgical videos, such as steps, actions, and gestures.</li>
-            <li>Investigate the integration of Large Language Models (LLMs) for enhanced planning assistance and more detailed textual descriptions of anticipated workflows.</li>
-            <li>Expand the model's capabilities to handle multi-modal inputs, incorporating additional data sources beyond video.</li>
-            <li>Conduct clinical trials to validate the model's performance and usefulness in real-world surgical settings.</li>
-            <li>Develop methods to compare the model's anticipation capabilities with human expert performance.</li>
+            <li>Enhance the generative process with <strong>dynamic confidence-based adjustments</strong> for more reliable and robust predictions in clinical scenarios.</li>
+            <li>Develop a <strong>vision-language-action framework</strong> by integrating language inputs to enable direct response to surgical team prompts.</li>
+            <li>Incorporate <strong>multiple input modalities</strong> including language, audio, and proprioceptive sensory data from surgical robots.</li>
+            <li>Expand training labels to cover both <strong>surgical phases and specific action triplets</strong> for finer-grained workflow prediction.</li>
+            <li>Address challenges related to <strong>anatomical differences, surgeon skill, and patient-specific factors</strong> for improved real-time adaptability.</li>
           </ol>
         </div>
       </div>
@@ -461,11 +441,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{boels2024supra,
-    title   = {SuPRA: Surgical Phase Recognition and Anticipation for Intra-Operative Planning},
+    <pre><code>@article{boels2024swag,
+    title   = {SWAG: Long-term Surgical Workflow Prediction with Generative-based Anticipation},
     author  = {Maxence Boels and Yang Liu and Prokar Dasgupta and Alejandro Granados and Sebastien Ourselin},
     year    = {2024},
-    journal = {arXiv preprint arXiv: 2403.06200}
+    journal = {Submitted to IJCARS}
 }</code></pre>
   </div>
 </section>
