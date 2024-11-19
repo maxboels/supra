@@ -125,6 +125,8 @@ body {
 
 .results-carousel video {
   margin: 0;
+  height: 500px; /* Increase the height of the videos */
+  width: 100%; /* Ensure the videos take up the full width */
 }
 
 
